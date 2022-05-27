@@ -80,11 +80,11 @@ class ApiMethodFactory {
             |        n${methodDef.name}($dstWithArgsInBody);
             |        return dst;
             |    }
-            |    
+            |
             |    $methodMods void $methodName(final ${methodDef.result.type} $dstWithArgsInSign) {
             |        n${methodDef.name}($dstWithArgsInBody);
             |    }
-            |    
+            |
             |    $methodMods float ${methodName}X($argsInSign) {
             |        return n${methodDef.name}X($argsInBody);
             |    }
@@ -148,7 +148,7 @@ class ApiMethodFactory {
             |     $methodMods void $methodName(${methodDef.result.type} $dstWithArgsInSign); /*
             |        $resultCpyMethodName(env, $methodCall, dst);
             |     */
-            | 
+            |
             |     $methodMods float ${methodName}X($argsInSign); /*
             |        return $methodCall.x;
             |     */
