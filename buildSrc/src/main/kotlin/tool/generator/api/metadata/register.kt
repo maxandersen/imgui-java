@@ -11,7 +11,8 @@ private fun findMetadata(): Map<String, ApiMetadata> {
     Reflections(PACKAGE_TO_PARSE_FOR_METADATA).run {
         getSubTypesOf(ApiMetadata::class.java).map { it.newInstance() }.forEach {
             val packageName = it.javaClass.`package`.name.removePrefix("$PACKAGE_TO_PARSE_FOR_METADATA.")
-            registeredMetadata[packageName] = it
+            val fullPackageName = "$packageName.${it.javaClass.simpleName}"
+            registeredMetadata[fullPackageName] = it
         }
     }
     return registeredMetadata
