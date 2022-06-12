@@ -64,6 +64,7 @@ At the same time, Application gives an option to override any life-cycle method 
 A very simple application may look like this:
 ```
 import imgui.ImGui;
+import imgui.app.Configuration;
 import imgui.app.Application;
 
 public class Main extends Application {
